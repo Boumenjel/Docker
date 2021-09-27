@@ -25,7 +25,11 @@ pipeline {
                      }
            }
 
-         //stage('Run Docker Image'){steps {bat 'docker run -p 9090:8084 jenkinsapp.jar'}}
+         stage('Tag Docker Image'){
+             steps {
+                 bat 'docker tag jenkinsapp.jar devhubjava/jenkinsapp.jar'
+             }
+         }
 
          stage('Push Docker Image'){
          withCredentials([string(credentialsId: 'devhubjava', variable: 'devhubjava')]) {
