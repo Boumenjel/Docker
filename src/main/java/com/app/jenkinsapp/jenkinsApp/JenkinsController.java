@@ -13,5 +13,6 @@ public class JenkinsController {
     public String getHello(Model model) {
         model.addAttribute("hello","Hello Spring Boot User");
         return "hello Wael Boumenjel";
+        
     }
 }
