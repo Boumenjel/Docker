@@ -34,7 +34,7 @@ pipeline {
          stage('Push Docker Image'){
               steps {
             withCredentials([string(credentialsId: 'devhubjava', variable: 'devhubjava')]) {
-                 bat "docker login -u devhubjava -p ${dockerHubPwd}"      
+                 bat "docker login -u devhubjava -p ${devhubjava}"      
               }
               bat 'docker push  devhubjava/jenkinsapp.jar'
             }
